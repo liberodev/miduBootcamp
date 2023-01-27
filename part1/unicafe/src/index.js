@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 
 const Cabecera = ({texto}) => <h1>{texto}</h1>
 const Button = ({good, setGood, neutral, setNeutral, bad, setBad}) => {
@@ -20,17 +20,19 @@ const Statistics = ({good, neutral, bad}) => {
     return <p>No feedback given</p>
 
   return (
-    <div>
-      <Statistic text='good' value={good} />
-      <Statistic text='neutral' value={neutral} />
-      <Statistic text='bad' value={bad} />
-      <Statistic text='all' value={total} />
-      <Statistic text='average' value={isNaN(dividendoAVG / total) ? 0 : dividendoAVG / total} />
-      <Statistic text='positive' value={isNaN(dividendoPOS / total) ? 0 : dividendoPOS / total} />
-    </div>
+    <table>
+        <tbody>
+          <Statistic text='good' value={good} />
+          <Statistic text='neutral' value={neutral} />
+          <Statistic text='bad' value={bad} />
+          <Statistic text='all' value={total} />
+          <Statistic text='average' value={isNaN(dividendoAVG / total) ? 0 : dividendoAVG / total} />
+          <Statistic text='positive' value={isNaN(dividendoPOS / total) ? 0 : dividendoPOS / total} />
+        </tbody>
+    </table>
   )
 }
-const Statistic = ({text, value}) => <div>{text} {value}</div>
+const Statistic = ({text, value}) => <tr><td>{text}</td><td>{value}</td></tr>
 
 const App = () => {
   // save clicks of each button to its own state
