@@ -30,7 +30,7 @@ const Statistics = ({good, neutral, bad}) => {
     </div>
   )
 }
-const Statistic = ({text, value}) => <p>{text} {value}</p>
+const Statistic = ({text, value}) => <div>{text} {value}</div>
 
 const App = () => {
   // save clicks of each button to its own state
