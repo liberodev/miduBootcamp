@@ -2,6 +2,15 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const Cabecera = ({texto}) => <h1>{texto}</h1>
+const Feedback = ({good, setGood, neutral, setNeutral, bad, setBad}) => {
+  return (
+    <div>
+      <button onClick={() => setGood(good + 1)}>good</button>
+      <button onClick={() => setNeutral(neutral + 1)}>neutral</button>
+      <button onClick={() => setBad(bad + 1)}>bad</button>
+    </div>
+  )
+}
 const Statistics = ({good, neutral, bad}) => {
   return (
     <div>
@@ -21,9 +30,7 @@ const App = () => {
   return (
     <div>
       <Cabecera texto='give feedback' />
-      <button onClick={() => setGood(good + 1)}>good</button>
-      <button onClick={() => setNeutral(neutral + 1)}>neutral</button>
-      <button onClick={() => setBad(bad + 1)}>bad</button>
+      <Feedback good={good} setGood={setGood} neutral={neutral} setNeutral={setNeutral} bad={bad} setBad={setBad} />
       <Cabecera texto='statistics' />
       <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
