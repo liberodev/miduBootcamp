@@ -17,6 +17,9 @@ const Statistics = ({good, neutral, bad}) => {
       <p>good {good}</p>
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
+      <Total total={good + neutral + bad} />
+      <Average avg={((good*1) + (neutral*0) + (bad*(-1))) / (good + neutral + bad)} />
+      <Positive positive={(good*100) / (good + neutral + bad)} />
     </div>
   )
 }
@@ -46,9 +49,6 @@ const App = () => {
       <Feedback good={good} setGood={setGood} neutral={neutral} setNeutral={setNeutral} bad={bad} setBad={setBad} />
       <Cabecera texto='statistics' />
       <Statistics good={good} neutral={neutral} bad={bad} />
-      <Total total={good + neutral + bad} />
-      <Average avg={((good*1) + (neutral*0) + (bad*(-1))) / (good + neutral + bad)} />
-      <Positive positive={(good*100) / (good + neutral + bad)} />
     </div>
   )
 }
