@@ -14,6 +14,10 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (persons.some((person) => person.name === newName ))
+      return alert(`${newName} is already added to phonebook`);
+    
     const personToAddToState = {
       id: persons.length + 1,
       name: newName
