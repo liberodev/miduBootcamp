@@ -10,15 +10,12 @@ const App = () => {
   const [ newName, setNewName ] = useState('')
   const [ newNumber, setNewNumber ] = useState('')
   const [ filter, setFilter ] = useState('')
-  const [ loading, setLoading ] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
     axios
         .get("http://localhost:3001/persons")
         .then((response) => {
           setPersons(response.data);
-          setLoading(false);
         });
   }, [])
 
