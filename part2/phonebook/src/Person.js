@@ -1,9 +1,9 @@
 const Person = (props) => {
-  const { name, phone } = props;
+  const { name, number } = props;
 
   return (
     <div>
-      {name} {phone}
+      {name} {number}
     </div>
   );
 }

@@ -1,11 +1,11 @@
-const PersonForm = ({persons, setPersons, newName, setNewName, newPhone, setNewPhone}) => {
+const PersonForm = ({persons, setPersons, newName, setNewName, newNumber, setNewNumber}) => {
 
   const handleChangeName = (event) => {
     setNewName(event.target.value)
   }
 
   const handleChangePhone = (event) => {
-    setNewPhone(event.target.value)
+    setNewNumber(event.target.value)
   }
 
   const handleSubmit = (event) => {
@@ -17,19 +17,19 @@ const PersonForm = ({persons, setPersons, newName, setNewName, newPhone, setNewP
     const personToAddToState = {
       id: persons.length + 1,
       name: newName,
-      phone: newPhone
+      phone: newNumber
     }
 
     setPersons([...persons, personToAddToState])
     setNewName('')
-    setNewPhone('')
+    setNewNumber('')
   }
 
   return ( 
     <form onSubmit={handleSubmit}>
     <div>
       <div>name: <input onChange={handleChangeName} value={newName} /></div>
-      <div>number: <input onChange={handleChangePhone} value={newPhone} /></div>
+      <div>number: <input onChange={handleChangePhone} value={newNumber} /></div>
     </div>
     <div>
       <button type='submit'>add</button>
