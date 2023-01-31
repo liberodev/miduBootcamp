@@ -25,8 +25,11 @@ const Countries = ({filter, countries}) => {
     <div>
       {filteredCountries
         .map((country) => {
-          console.log(country.cca3)
-          return <Country key={country.cca3} {...country} />
+          return (
+            <div>
+              <Country key={country.cca3} {...country} />
+            </div>
+          )
       })}
     </div>
   )
