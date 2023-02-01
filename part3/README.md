@@ -14,9 +14,17 @@ Para conocer la versión que tenemos instalada de ambas, bastaría con escribir 
 
 ### Iniciar proyecto
 
-
+Para iniciar un proyecto de Node.js, lo podemos hacer bien con 'npm init', que nos irá haciendo preguntas en el proceso de inicio, o bien con 'npm init -y', que lo iniciará tomando como respuesta estandar 'yes'.
 
 ### Ejecución proyecto
+
+Una vez iniciado, podemos ejecutar nuestro proyecto con el comando 'node -fichero js-'. Aún así, es más cómodo añadir la ejecución en los "scripts" del proyecto. En el fichero 'package.json' que se genera al iniciar el proyecto, le añadimos el script que queramos ejecutar. En nuestro caso:
+
+`"start": "node index.js"`
+
+Y ahora, desde el terminal, podemos ejecutar el comando 'npm start', para ejecutar dicho script, o bien, si no nos acordamos de los scripts del proyecto, podemos ejecutar 'npm run', que devuelve todos los scripts del proyecto que podemos ejecutar.
+
+### Primer servidor con Node.js
 
 
 [node]: https://nodejs.org/es/
