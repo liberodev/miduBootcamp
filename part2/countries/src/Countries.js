@@ -7,7 +7,8 @@ const Countries = ({filter, countries}) => {
       if (filter === '') return false
       return (country.name.common.toLowerCase()).includes(filter.toLowerCase())
     })
-
+  
+  console.log(filteredCountries)
   if ( filteredCountries.length > 10 )
     return <div>Too many matches, specify another filter</div>
   else if ( filteredCountries.length === 1 )
@@ -15,8 +16,7 @@ const Countries = ({filter, countries}) => {
       <div>
         {filteredCountries
           .map((country) => {
-            console.log(country.cca3)
-            return <Country key={country.cca3} complete={uniqueCountry} {...country} />
+            return <Country key={country.name.common} complete={uniqueCountry} {...country} />
         })}
       </div>
     )
@@ -27,7 +27,7 @@ const Countries = ({filter, countries}) => {
         .map((country) => {
           return (
             <div>
-              <Country key={country.cca3} {...country} />
+              <Country key={country.name.common} {...country} />
             </div>
           )
       })}
