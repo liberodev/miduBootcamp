@@ -19,4 +19,4 @@ Para conocer la versión que tenemos instalada de ambas, bastaría con escribir 
 ### Ejecución proyecto
 
 
-[node]:(https://nodejs.org/es/)
+[node]: https://nodejs.org/es/
